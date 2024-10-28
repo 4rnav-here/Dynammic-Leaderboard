@@ -1,0 +1,219 @@
+@font-face {
+  font-family: 'Game Of Squids';
+  src: url('./fonts/Game\ Of\ Squids.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Game Of Squids', sans-serif;
+  background-color: #000;
+  background-image: url('./SquidGames.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leaderboard-container {
+  max-height: 90vh;
+  width: 20rem;
+  /* max-width: 300rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leaderboard {
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  width: 60rem;
+  box-sizing: border-box;
+  animation: plasmaGlow 3s infinite;
+  /* max-width: 300rem; */
+}
+
+.top-3 {
+  margin-bottom: 1rem;
+}
+
+.scrollable-leaderboard {
+  overflow-y: auto;
+  overflow-x: auto;
+  max-height: calc(90vh - 350px); /* Adjust based on your top 3 height */
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  transform-origin: center;
+}
+
+.top-3 .leaderboard-item {
+  background-color: rgba(220, 20, 60, 0.2); /* Crimson background for top 3 */
+}
+
+.top-3 .leaderboard-item:nth-child(1) {
+  background-color: rgba(220, 20, 60, 0.4); /* Brighter crimson for 1st place */
+}
+
+.top-3 .leaderboard-item:nth-child(2) {
+  background-color: rgba(220, 20, 60, 0.3); /* Slightly darker for 2nd place */
+}
+
+.top-3 .leaderboard-item:nth-child(3) {
+  background-color: rgba(220, 20, 60, 0.2); /* Even darker for 3rd place */
+}
+
+.top-3 .leaderboard-item .rank {
+  color: #DC143C; /* Crimson color for rank number */
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.top-3 .leaderboard-item .name {
+  color: #FFB6C1; /* Light pink for name to contrast with crimson */
+}
+
+.top-3 .leaderboard-item .score {
+  color: #FF69B4; /* Hot pink for score */
+  font-weight: bold;
+}
+
+/* Customize scrollbar for webkit browsers */
+.scrollable-leaderboard::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollable-leaderboard::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.scrollable-leaderboard::-webkit-scrollbar-thumb {
+  background: rgba(220, 20, 60, 0.5);
+  border-radius: 5px;
+}
+
+.scrollable-leaderboard::-webkit-scrollbar-thumb:hover {
+  background: rgba(220, 20, 60, 0.7);
+}
+@keyframes plasmaGlow {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5),
+                0 0 30px rgba(255, 0, 0, 0.3),
+                0 0 40px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.7),
+                0 0 35px rgba(255, 0, 0, 0.5),
+                0 0 45px rgba(255, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5),
+                0 0 30px rgba(255, 0, 0, 0.3),
+                0 0 40px rgba(255, 0, 0, 0.2);
+  }
+}
+
+/* .leaderboard {
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  max-width: 50rem;
+  width: 100%;
+  transition: transform 0.3s ease;
+  animation: plasmaGlow 3s infinite;
+} */
+.leaderboard:hover {
+  transform: scale(1.02);
+}
+.leaderboard h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+.leaderboard:hover h1 {
+  color: #ff6b6b;
+}
+/* .leaderboard-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+} */
+.leaderboard-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+  border-color: #ff0000;
+}
+.rank {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  color: #ff0000;
+  transition: transform 0.3s ease;
+}
+.leaderboard-item:hover .rank {
+  transform: scale(1.2);
+}
+.name {
+  color: #fff;
+  font-size: 2.25rem;
+  transition: color 0.3s ease;
+}     
+.leaderboard-item:hover .name {
+  color: #ff6b6b;
+}
+.score {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: #ff6b6b;
+  transition: all 0.3s ease;
+}
+.leaderboard-item:hover .score {
+  color: #ffa5a5;
+  transform: scale(1.1);
+}
+.update-text {
+  margin-top: 2.25rem;
+  text-align: center;
+  color: #ff6b6b;
+  transition: color 0.3s ease;
+}
+.leaderboard:hover .update-text {
+  color: #ffa5a5;
+}
+.shapes {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 2rem;
+  color: #ff0000;
+}
